@@ -17,4 +17,4 @@ requires:
   B::Hooks::OP::Check: 0
   XSLoader: 0
   perl: 5.008
-version: 0.001
+version: 0.002

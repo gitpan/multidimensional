@@ -1,6 +1,6 @@
 package multidimensional;
 BEGIN {
-  $multidimensional::VERSION = '0.001';
+  $multidimensional::VERSION = '0.002';
 }
 # ABSTRACT: disables multidmensional array emulation
 
@@ -11,7 +11,14 @@ use warnings;
 use B::Hooks::OP::Check;
 use XSLoader;
 
-XSLoader::load __PACKAGE__, our $VERSION;
+XSLoader::load(
+    __PACKAGE__,
+    # we need to be careful not to touch $VERSION at compile time, otherwise
+    # DynaLoader will assume it's set and check against it, which will cause
+    # fail when being run in the checkout without dzil having set the actual
+    # $VERSION
+    exists $multidimensional::{VERSION} ? ${ $multidimensional::{VERSION} } : (),
+);
 
 
 sub unimport { $^H{+(__PACKAGE__)} = 1 }
@@ -25,20 +32,22 @@ sub import { $^H{+(__PACKAGE__)} = undef }
 __END__
 =pod
 
+=encoding utf-8
+
 =head1 NAME
 
 multidimensional - disables multidmensional array emulation
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 SYNOPSIS
 
     no multidimensional;
 
     $hash{1, 2};                # dies
-    $hash{join($;, 1, 2)};      # also dies
+    $hash{join($;, 1, 2)};      # doesn't die
 
 =head1 DESCRIPTION
 
@@ -60,21 +69,6 @@ scope being compiled.
 
 Enables multidimensional array emulation for the remainder of the
 scope being compiled;
-
-=head1 CAVEAT
-
-Because of the way the module operates (by checking the optree), it also
-catches explicit use of C<join($;, ...)> in a hash subscript.  If you
-need to do this, either enable multidimensional hash emulation for just
-that scope or use one of the following workarounds:
-
-    my $key = join($;, 1, 2);
-    $hash{$key};
-
-    my $sep = $;;
-    $hash{join($sep, 1, 2)};
-
-    $hash{join(my $sep = $;, 1, 2)};
 
 =head1 SEE ALSO
 

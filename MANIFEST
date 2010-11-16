@@ -12,3 +12,4 @@ t/basic.t
 t/lib/MyTest.pm
 t/release-pod-coverage.t
 t/release-pod-syntax.t
+weaver.ini
