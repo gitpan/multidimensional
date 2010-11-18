@@ -1,5 +1,9 @@
 Revision history for multidimensional
 
+0.003     2010-11-18 12:47:38 Europe/London
+ - Call ExtUtils::Depends from the built Makefile.PL,
+   not when building it
+
 0.002 2010-11-16
  - Don't disallow explicit join($;, ...) in hash subscript
 

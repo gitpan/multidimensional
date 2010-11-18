@@ -12,23 +12,22 @@ my %WriteMakefileArgs = (
     'Test::More' => '0'
   },
   'CONFIGURE_REQUIRES' => {
+    'ExtUtils::Depends' => '0',
     'ExtUtils::MakeMaker' => '6.31'
   },
   'DISTNAME' => 'multidimensional',
   'EXE_FILES' => [],
-  'INC' => '-I/home/ilmari/perls/v5.12.2/lib/site_perl/5.12.2/x86_64-linux-thread-multi/B/Hooks/OP/Check/Install',
-  'LIBS' => '',
   'LICENSE' => 'perl',
   'NAME' => 'multidimensional',
   'PREREQ_PM' => {
     'B::Hooks::OP::Check' => '0',
     'XSLoader' => '0'
   },
-  'TYPEMAPS' => [],
-  'VERSION' => '0.002',
+  'VERSION' => '0.003',
   'test' => {
     'TESTS' => 't/*.t'
-  }
+  },
+  do{ require ExtUtils::Depends; ExtUtils::Depends->new('multidimensional', 'B::Hooks::OP::Check')->get_makefile_vars }
 );
 
 
