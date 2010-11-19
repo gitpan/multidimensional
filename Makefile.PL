@@ -21,9 +21,10 @@ my %WriteMakefileArgs = (
   'NAME' => 'multidimensional',
   'PREREQ_PM' => {
     'B::Hooks::OP::Check' => '0',
+    'Lexical::SealRequireHints' => '0',
     'XSLoader' => '0'
   },
-  'VERSION' => '0.003',
+  'VERSION' => '0.004',
   'test' => {
     'TESTS' => 't/*.t'
   },

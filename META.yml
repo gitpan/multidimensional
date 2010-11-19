@@ -16,9 +16,10 @@ meta-spec:
 name: multidimensional
 requires:
   B::Hooks::OP::Check: 0
+  Lexical::SealRequireHints: 0
   XSLoader: 0
   perl: 5.008
 resources:
   homepage: http://github.com/ilmari/multidimensional/tree
   repository: git://github.com/ilmari/multidimensional.git
-version: 0.003
+version: 0.004
