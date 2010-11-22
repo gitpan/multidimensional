@@ -1,5 +1,8 @@
 Revision history for multidimensional
 
+0.006     2010-11-22 12:44:03 Europe/London
+ - Add B::Hooks::OP::Check to ConfigureRequires
+
 0.005     2010-11-20 21:21:15 Europe/London
  - Make work with perl < 5.8.8
 

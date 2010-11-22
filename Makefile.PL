@@ -9,9 +9,10 @@ my %WriteMakefileArgs = (
   'ABSTRACT' => 'disables multidmensional array emulation',
   'AUTHOR' => 'Dagfinn Ilmari Mannsåker <ilmari@ilmari.org>',
   'BUILD_REQUIRES' => {
-    'Test::More' => '0'
+    'Test::More' => '0.88'
   },
   'CONFIGURE_REQUIRES' => {
+    'B::Hooks::OP::Check' => '0',
     'ExtUtils::Depends' => '0',
     'ExtUtils::MakeMaker' => '6.31'
   },
@@ -24,7 +25,7 @@ my %WriteMakefileArgs = (
     'Lexical::SealRequireHints' => '0',
     'XSLoader' => '0'
   },
-  'VERSION' => '0.005',
+  'VERSION' => '0.006',
   'test' => {
     'TESTS' => 't/*.t'
   },

@@ -1,6 +1,6 @@
 package multidimensional;
 BEGIN {
-  $multidimensional::VERSION = '0.005';
+  $multidimensional::VERSION = '0.006';
 }
 # ABSTRACT: disables multidmensional array emulation
 
@@ -41,7 +41,7 @@ multidimensional - disables multidmensional array emulation
 
 =head1 VERSION
 
-version 0.005
+version 0.006
 
 =head1 SYNOPSIS
 
