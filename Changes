@@ -1,5 +1,9 @@
 Revision history for multidimensional
 
+0.007     2010-12-06 23:06:16 Europe/London
+ - Fix code before declaration in multidimensional.xs
+   (RT#63676)
+
 0.006     2010-11-22 12:44:03 Europe/London
  - Add B::Hooks::OP::Check to ConfigureRequires
 
