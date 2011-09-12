@@ -3,7 +3,7 @@
 BEGIN { require 5.008; }
 use strict;
 use warnings;
-use ExtUtils::MakeMaker 6.31;
+use ExtUtils::MakeMaker 6.30;
 
 my %WriteMakefileArgs = (
   'ABSTRACT' => 'disables multidmensional array emulation',
@@ -14,18 +14,20 @@ my %WriteMakefileArgs = (
   'CONFIGURE_REQUIRES' => {
     'B::Hooks::OP::Check' => '0',
     'ExtUtils::Depends' => '0',
-    'ExtUtils::MakeMaker' => '6.31'
+    'ExtUtils::MakeMaker' => '6.30'
   },
   'DISTNAME' => 'multidimensional',
   'EXE_FILES' => [],
   'LICENSE' => 'perl',
   'NAME' => 'multidimensional',
   'PREREQ_PM' => {
-    'B::Hooks::OP::Check' => '0',
-    'Lexical::SealRequireHints' => '0',
-    'XSLoader' => '0'
+    'B::Hooks::OP::Check' => '0.19',
+    'Lexical::SealRequireHints' => '0.005',
+    'XSLoader' => '0',
+    'strict' => '0',
+    'warnings' => '0'
   },
-  'VERSION' => '0.007',
+  'VERSION' => '0.008',
   'test' => {
     'TESTS' => 't/*.t'
   },
@@ -38,7 +40,7 @@ unless ( eval { ExtUtils::MakeMaker->VERSION(6.56) } ) {
   my $pp = $WriteMakefileArgs{PREREQ_PM};
   for my $mod ( keys %$br ) {
     if ( exists $pp->{$mod} ) {
-      $pp->{$mod} = $br->{$mod} if $br->{$mod} > $pp->{$mod}; 
+      $pp->{$mod} = $br->{$mod} if $br->{$mod} > $pp->{$mod};
     }
     else {
       $pp->{$mod} = $br->{$mod};

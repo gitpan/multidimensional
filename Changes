@@ -1,5 +1,12 @@
 Revision history for multidimensional
 
+0.008     2011-09-12 13:05:28 Europe/London
+ - Test string eval (RT#70602)
+ - Require fixed version of Lexical::SealRequireHints (RT#70602)
+ - Require fixed version of B::Hooks::OP::Check (RT#70599)
+ - Make sure errors fire at compile time
+ - Use META.{yml,json} version 2
+
 0.007     2010-12-06 23:06:16 Europe/London
  - Fix code before declaration in multidimensional.xs
    (RT#63676)
