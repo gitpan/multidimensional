@@ -13,6 +13,7 @@ my %WriteMakefileArgs = (
   },
   'CONFIGURE_REQUIRES' => {
     'B::Hooks::OP::Check' => '0',
+    'CPAN::Meta' => '2.112580',
     'ExtUtils::Depends' => '0',
     'ExtUtils::MakeMaker' => '6.30'
   },
@@ -27,7 +28,7 @@ my %WriteMakefileArgs = (
     'strict' => '0',
     'warnings' => '0'
   },
-  'VERSION' => '0.008',
+  'VERSION' => '0.009',
   'test' => {
     'TESTS' => 't/*.t'
   },
