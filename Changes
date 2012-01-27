@@ -1,5 +1,9 @@
 Revision history for multidimensional
 
+0.010     2012-01-27 12:34:39 Europe/London
+ - Generate default versions of META.yml and .json
+   This fixes configure_requires for older toolchains.
+
 0.009     2011-09-15 21:21:20 Europe/London
 
  - Require fixed version of CPAN::Meta (RT#70916)
