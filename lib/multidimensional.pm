@@ -1,8 +1,8 @@
 package multidimensional;
 {
-  $multidimensional::VERSION = '0.010';
+  $multidimensional::VERSION = '0.011';
 }
-# ABSTRACT: disables multidmensional array emulation
+# ABSTRACT: disables multidimensional array emulation
 
 { use 5.008; }
 use strict;
@@ -31,17 +31,18 @@ sub import { delete $^H{+(__PACKAGE__)} }
 1;
 
 __END__
+
 =pod
 
 =encoding utf-8
 
 =head1 NAME
 
-multidimensional - disables multidmensional array emulation
+multidimensional - disables multidimensional array emulation
 
 =head1 VERSION
 
-version 0.010
+version 0.011
 
 =head1 SYNOPSIS
 
@@ -52,18 +53,18 @@ version 0.010
 
 =head1 DESCRIPTION
 
-Perl's multidimensional array emultaion stems from the days before the
+Perl's multidimensional array emulation stems from the days before the
 language had references, but these days it mostly serves to bite you
 when you typo a hash slice by using the C<$> sigil instead of C<@>.
 
-This module lexically makes using multidmensional array emulation a
+This module lexically makes using multidimensional array emulation a
 fatal error at compile time.
 
 =head1 METHODS
 
 =head2 unimport
 
-Disables multidimensional array emultaion for the remainder of the
+Disables multidimensional array emulation for the remainder of the
 scope being compiled.
 
 =head2 import
@@ -88,4 +89,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

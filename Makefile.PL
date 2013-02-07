@@ -6,7 +6,7 @@ use warnings;
 use ExtUtils::MakeMaker 6.30;
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'disables multidmensional array emulation',
+  'ABSTRACT' => 'disables multidimensional array emulation',
   'AUTHOR' => 'Dagfinn Ilmari Mannsåker <ilmari@ilmari.org>',
   'BUILD_REQUIRES' => {
     'Test::More' => '0.88'
@@ -28,7 +28,7 @@ my %WriteMakefileArgs = (
     'strict' => '0',
     'warnings' => '0'
   },
-  'VERSION' => '0.010',
+  'VERSION' => '0.011',
   'test' => {
     'TESTS' => 't/*.t'
   },
